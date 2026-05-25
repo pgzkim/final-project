@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,10 +7,215 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>CPS - Услуги и сервисы</title>
   </head>
   <body>
-    <img src="./img/webpack.svg" alt="Webpack Logo" width="200px" />
-    <h3>Welcome to Webpack 5 starter </h3>
+    <div class="site-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__top">
+          <a class="logo" href="#" aria-label="CPS">
+            <img src="./img/logo-cps.png" alt="CPS" />
+          </a>
+          <button class="round-button sidebar__search" type="button" aria-label="Поиск">
+            <span class="icon icon--search"></span>
+          </button>
+        </div>
+
+        <nav class="side-nav" aria-label="Основное меню">
+          <a class="side-nav__link" href="#">Ремонт техники</a>
+          <a class="side-nav__link side-nav__link--active" href="#">Услуги и сервисы</a>
+          <a class="side-nav__link" href="#">Корпоративным клиентам</a>
+          <a class="side-nav__link" href="#">Продавцам техники</a>
+          <a class="side-nav__link" href="#">Партнерам</a>
+          <a class="side-nav__link" href="#">Производителям</a>
+          <a class="side-nav__link" href="#">Наши сервисные центры</a>
+          <a class="side-nav__link" href="#">Контакты</a>
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="contact-actions" aria-label="Контакты">
+            <button class="round-button" type="button" aria-label="Позвонить">
+              <span class="icon icon--phone"></span>
+            </button>
+            <button class="round-button" type="button" aria-label="Написать">
+              <span class="icon icon--chat"></span>
+            </button>
+            <button class="round-button" type="button" aria-label="Профиль">
+              <span class="icon icon--user"></span>
+            </button>
+          </div>
+          <a class="sidebar__email" href="mailto:mail@cps.com">mail@cps.com</a>
+          <a class="sidebar__phone" href="tel:88008908900">8 800 890 8900</a>
+          <div class="language">
+            <a href="#">RU</a>
+            <a class="language__active" href="#">EN</a>
+            <a href="#">CH</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="mobile-header">
+          <button class="round-button mobile-header__menu" type="button" aria-label="Открыть меню" data-menu-toggle>
+            <span class="burger"></span>
+          </button>
+          <a class="logo mobile-header__logo" href="#" aria-label="CPS">
+            <img src="./img/logo-cps.png" alt="CPS" />
+          </a>
+          <span class="mobile-header__divider"></span>
+          <button class="round-button" type="button" aria-label="Оставить заявку">
+            <span class="icon icon--tools"></span>
+          </button>
+          <button class="round-button" type="button" aria-label="Статус ремонта">
+            <span class="icon icon--receipt"></span>
+          </button>
+        </header>
+
+        <main class="content">
+          <section class="hero">
+            <div class="hero__heading">
+              <h1>Услуги и сервисы</h1>
+              <div class="header-actions">
+                <a class="header-actions__item" href="#">
+                  <span>Оставить заявку</span>
+                  <span class="round-button"><span class="icon icon--tools"></span></span>
+                </a>
+                <a class="header-actions__item" href="#">
+                  <span>Статус ремонта</span>
+                  <span class="round-button"><span class="icon icon--receipt"></span></span>
+                </a>
+              </div>
+            </div>
+
+            <nav class="tabs" aria-label="Разделы услуг">
+              <a class="tabs__item tabs__item--active" href="#">Ремонтируемые бренды</a>
+              <a class="tabs__item" href="#">Дополнительные услуги</a>
+              <a class="tabs__item" href="#">Цены на услуги</a>
+              <a class="tabs__item" href="#">Адреса сервисных центров</a>
+              <a class="tabs__item" href="#">Специальные цены</a>
+              <a class="tabs__item" href="#">Отзывы</a>
+            </nav>
+
+            <div class="hero__body">
+              <div class="hero__copy">
+                <p>
+                  Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
+                  отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                </p>
+                <p>
+                  Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое
+                  количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+                  очередь, советуют нас родным и близким.
+                </p>
+                <a class="read-more" href="#"><span class="double-chevron"></span> Читать далее</a>
+              </div>
+              <img class="hero__image" src="./img/cps-sign.jpg" alt="Вывеска сервисного центра CPS" />
+            </div>
+          </section>
+
+          <section class="catalog-section catalog-section--brands" data-expandable>
+            <h2>Ремонт техники различных брендов</h2>
+            <div class="brand-slider swiper" data-slider>
+              <div class="brand-grid swiper-wrapper">
+                <a class="brand-card brand-card--lenovo swiper-slide" href="#"><span>Lenovo</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--samsung swiper-slide" href="#"><span>Samsung</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--apple swiper-slide" href="#"><span>Apple</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--viewsonic swiper-slide" href="#"><span>ViewSonic</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--bosch swiper-slide" href="#"><span>Bosch</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--hp swiper-slide" href="#"><span>HP</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--acer swiper-slide" href="#"><span>Acer</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--sony swiper-slide" href="#"><span>Sony</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--lenovo swiper-slide catalog-section__extra" href="#"><span>Lenovo</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--samsung swiper-slide catalog-section__extra" href="#"><span>Samsung</span><span class="arrow-button"></span></a>
+                <a class="brand-card brand-card--apple swiper-slide catalog-section__extra" href="#"><span>Apple</span><span class="arrow-button"></span></a>
+              </div>
+              <div class="slider-dots swiper-pagination"></div>
+            </div>
+            <button class="show-all" type="button" data-show-all>
+              <span class="double-chevron"></span>
+              <span data-show-text>Показать все</span>
+            </button>
+          </section>
+
+          <section class="catalog-section catalog-section--tech" data-expandable>
+            <h2>Ремонт различных видов техники</h2>
+            <div class="tech-slider swiper" data-slider>
+              <div class="tech-grid swiper-wrapper">
+                <a class="tech-card swiper-slide" href="#"><span>Ремонт ноутбуков</span><span class="arrow-button"></span></a>
+                <a class="tech-card swiper-slide" href="#"><span>Ремонт планшетов</span><span class="arrow-button"></span></a>
+                <a class="tech-card swiper-slide" href="#"><span>Ремонт ПК</span><span class="arrow-button"></span></a>
+                <a class="tech-card swiper-slide" href="#"><span>Ремонт мониторов</span><span class="arrow-button"></span></a>
+                <a class="tech-card swiper-slide catalog-section__extra" href="#"><span>Ремонт смартфонов</span><span class="arrow-button"></span></a>
+                <a class="tech-card swiper-slide catalog-section__extra" href="#"><span>Ремонт серверов</span><span class="arrow-button"></span></a>
+              </div>
+              <div class="slider-dots swiper-pagination"></div>
+            </div>
+            <button class="show-all" type="button" data-show-all>
+              <span class="double-chevron"></span>
+              <span data-show-text>Показать все</span>
+            </button>
+          </section>
+
+          <section class="prices-section">
+            <h2>Цены на услуги</h2>
+            <div class="prices-table__head">
+              <span>Ремонтные услуги</span>
+              <span>Цена</span>
+              <span>Срок</span>
+              <span></span>
+            </div>
+            <div class="prices-slider swiper" data-slider>
+              <div class="prices-table swiper-wrapper">
+              <div class="prices-table__row swiper-slide">
+                <span data-label="Ремонтные услуги">Диагностика</span>
+                <span data-label="Цена">Бесплатно</span>
+                <span data-label="Срок">30 мин</span>
+                <a class="order-button" href="#">Заказать <span></span></a>
+              </div>
+              <div class="prices-table__row swiper-slide">
+                <span data-label="Ремонтные услуги">Замена дисплея</span>
+                <span data-label="Цена">1 000 ₽</span>
+                <span data-label="Срок">30-120 мин</span>
+                <a class="order-button" href="#">Заказать <span></span></a>
+              </div>
+              <div class="prices-table__row swiper-slide">
+                <span data-label="Ремонтные услуги">Замена полифонического динамика</span>
+                <span data-label="Цена">1 000 ₽</span>
+                <span data-label="Срок">30-120 мин</span>
+                <a class="order-button" href="#">Заказать <span></span></a>
+              </div>
+              <div class="prices-table__row swiper-slide">
+                <span data-label="Ремонтные услуги">Тестирование с выдачей технического заключения</span>
+                <span data-label="Цена">1 000 ₽</span>
+                <span data-label="Срок">30-120 мин</span>
+                <a class="order-button" href="#">Заказать <span></span></a>
+              </div>
+              <div class="prices-table__row swiper-slide">
+                <span data-label="Ремонтные услуги">Замена программного обеспечения</span>
+                <span data-label="Цена">1 000 ₽</span>
+                <span data-label="Срок">30-120 мин</span>
+                <a class="order-button" href="#">Заказать <span></span></a>
+              </div>
+              </div>
+              <div class="slider-dots prices-section__dots swiper-pagination"></div>
+            </div>
+            <div class="commercial">
+              <p>
+                Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения
+                коммерческого предложения на постоянное обслуживание, оставьте заявку.
+              </p>
+              <a href="#">Получить коммерческое предложение <span></span></a>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <p>© 2019 CPS<br />Разработано командой Apesong</p>
+          <a href="#">Политика конфиденциальности</a>
+          <p>Информация, размещенная на данной странице, не является публичной офертой</p>
+        </footer>
+      </div>
+    </div>
+    <div class="overlay" data-menu-toggle></div>
   </body>
 </html>
