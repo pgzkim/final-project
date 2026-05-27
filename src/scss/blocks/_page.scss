@@ -73,141 +73,15 @@ button {
   cursor: pointer;
 }
 
-.icon,
-.burger {
-  position: relative;
+.button-icon {
   display: block;
+  width: 40px;
+  height: 40px;
 }
 
-.icon--search {
-  width: 16px;
-  height: 16px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-}
-
-.icon--search::after {
-  position: absolute;
-  right: -7px;
-  bottom: -5px;
-  width: 9px;
-  height: 3px;
-  border-radius: 2px;
-  background: #fff;
-  content: '';
-  transform: rotate(45deg);
-}
-
-.icon--phone {
-  width: 18px;
-  height: 18px;
-  border: 4px solid #fff;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-radius: 50%;
-  transform: rotate(-35deg);
-}
-
-.icon--chat {
-  width: 20px;
-  height: 16px;
-  border-radius: 4px;
-  background: #fff;
-}
-
-.icon--chat::after {
-  position: absolute;
-  right: 3px;
-  bottom: -5px;
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  content: '';
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
-}
-
-.icon--chat::before {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  border-radius: 2px;
-  background: $pink;
-  box-shadow: 0 4px 0 $pink;
-  content: '';
-}
-
-.icon--user {
+.button-icon--small {
   width: 20px;
   height: 20px;
-}
-
-.icon--user::before,
-.icon--user::after {
-  position: absolute;
-  left: 50%;
-  background: #fff;
-  content: '';
-  transform: translateX(-50%);
-}
-
-.icon--user::before {
-  top: 1px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.icon--user::after {
-  bottom: 0;
-  width: 18px;
-  height: 9px;
-  border-radius: 10px 10px 4px 4px;
-}
-
-.icon--tools {
-  width: 22px;
-  height: 22px;
-}
-
-.icon--tools::before,
-.icon--tools::after {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  width: 22px;
-  height: 4px;
-  border-radius: 4px;
-  background: #fff;
-  content: '';
-}
-
-.icon--tools::before {
-  transform: rotate(45deg);
-}
-
-.icon--tools::after {
-  transform: rotate(-45deg);
-}
-
-.icon--receipt {
-  width: 18px;
-  height: 22px;
-  border: 4px solid #fff;
-  border-radius: 3px;
-}
-
-.icon--receipt::before {
-  position: absolute;
-  top: 4px;
-  left: 3px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 7px 0 0 #fff;
-  content: '';
 }
 
 .side-nav {
@@ -388,30 +262,10 @@ h1::before {
   font-weight: 700;
 }
 
-.double-chevron {
-  position: relative;
+.chevron-icon {
+  display: block;
   width: 8px;
-  height: 12px;
-}
-
-.double-chevron::before,
-.double-chevron::after {
-  position: absolute;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid $mint;
-  border-bottom: 2px solid $mint;
-  content: '';
-  transform: rotate(45deg);
-}
-
-.double-chevron::before {
-  top: -3px;
-}
-
-.double-chevron::after {
-  top: 6px;
+  height: 11px;
 }
 
 .hero__image {
@@ -486,82 +340,23 @@ h1::before {
 .brand-card {
   min-height: 72px;
   padding: 15px 15px 15px 16px;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1;
 }
 
-.brand-card--lenovo {
-  color: #e11b2f;
-}
-
-.brand-card--samsung {
-  color: #1459a8;
-  font-family: Georgia, serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.brand-card--samsung span:first-child {
-  display: inline-flex;
-  min-width: 117px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #1459a8;
-  color: #fff;
-}
-
-.brand-card--apple {
-  color: #a7a9ac;
-}
-
-.brand-card--apple span:first-child {
-  font-size: 0;
-}
-
-.brand-card--apple span:first-child::before {
+.brand-card__logo {
   display: block;
-  color: #a7a9ac;
-  content: '';
-  font-family: Arial, sans-serif;
-  font-size: 38px;
-  line-height: 1;
+  max-width: 128px;
+  max-height: 52px;
+  object-fit: contain;
 }
 
-.brand-card--viewsonic {
-  color: #b22843;
-  font-family: Georgia, serif;
-  font-size: 25px;
+.brand-card__logo--apple {
+  width: 44px;
+  height: 44px;
 }
 
-.brand-card--bosch {
-  color: #e30613;
-  font-size: 28px;
-  text-transform: uppercase;
-}
-
-.brand-card--hp {
-  color: #1ba3dc;
-  font-style: italic;
-  text-transform: lowercase;
-}
-
-.brand-card--acer {
-  color: #70b62c;
-  font-style: italic;
-  text-transform: lowercase;
-}
-
-.brand-card--sony {
-  color: #111;
-  font-family: Georgia, serif;
-  font-size: 31px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.brand-card__logo--hp {
+  width: 52px;
+  height: 52px;
 }
 
 .tech-card {
@@ -575,24 +370,10 @@ h1::before {
 }
 
 .arrow-button {
-  position: relative;
   width: 40px;
   height: 40px;
   flex: 0 0 40px;
-  border: 2px solid $pink;
-  border-radius: 50%;
-}
-
-.arrow-button::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-top: 3px solid $pink;
-  border-right: 3px solid $pink;
-  content: '';
-  transform: translate(-65%, -50%) rotate(45deg);
+  object-fit: contain;
 }
 
 .slider-dots {
@@ -615,7 +396,7 @@ h1::before {
   display: flex;
 }
 
-.catalog-section--expanded .double-chevron {
+.catalog-section--expanded .chevron-icon {
   transform: rotate(180deg);
 }
 
@@ -769,14 +550,6 @@ h1::before {
     height: 32px;
     border-radius: 1px;
     background: #eaeaea;
-  }
-
-  .burger {
-    width: 18px;
-    height: 2px;
-    border-radius: 2px;
-    background: #fff;
-    box-shadow: 0 -7px 0 #fff, 0 7px 0 #fff;
   }
 
   .header-actions {
