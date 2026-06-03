@@ -13,6 +13,9 @@
     <div class="site-shell">
       <aside class="sidebar" id="sidebar">
         <div class="sidebar__top">
+          <button class="round-button sidebar__close" type="button" aria-label="Закрыть меню" data-menu-toggle>
+            <img class="button-icon" src="./img/icons/close.svg" alt="" />
+          </button>
           <a class="logo" href="#" aria-label="CPS">
             <img src="./img/logo-cps.png" alt="CPS" />
           </a>
@@ -57,12 +60,24 @@
       <div class="page">
         <header class="mobile-header">
           <button class="round-button mobile-header__menu" type="button" aria-label="Открыть меню" data-menu-toggle>
-            <img class="button-icon" src="./img/icons/burger.svg" alt="" />
+            <img class="button-icon" src="./img/icons/burger.png" alt="" />
           </button>
+          <span class="mobile-header__divider mobile-header__divider--after-menu"></span>
           <a class="logo mobile-header__logo" href="#" aria-label="CPS">
             <img src="./img/logo-cps.png" alt="CPS" />
           </a>
-          <span class="mobile-header__divider"></span>
+          <div class="mobile-header__contacts" aria-label="Контакты">
+            <button class="round-button" type="button" aria-label="Позвонить">
+              <img class="button-icon" src="./img/icons/call.svg" alt="" />
+            </button>
+            <button class="round-button" type="button" aria-label="Написать">
+              <img class="button-icon" src="./img/icons/chat.svg" alt="" />
+            </button>
+            <button class="round-button" type="button" aria-label="Профиль">
+              <img class="button-icon" src="./img/icons/profile.svg" alt="" />
+            </button>
+          </div>
+          <span class="mobile-header__divider mobile-header__divider--before-actions"></span>
           <button class="round-button" type="button" aria-label="Оставить заявку">
             <img class="button-icon button-icon--small" src="./img/icons/tools.svg" alt="" />
           </button>
@@ -78,11 +93,15 @@
               <div class="header-actions">
                 <a class="header-actions__item" href="#">
                   <span>Оставить заявку</span>
-                  <span class="round-button"><img class="button-icon button-icon--small" src="./img/icons/tools.svg" alt="" /></span>
+                  <span class="round-button">
+                    <img class="button-icon button-icon--small" src="./img/icons/tools.svg" alt=""/>
+                  </span>
                 </a>
                 <a class="header-actions__item" href="#">
                   <span>Статус ремонта</span>
-                  <span class="round-button"><img class="button-icon button-icon--small" src="./img/icons/receipt.svg" alt="" /></span>
+                  <span class="round-button">
+                    <img class="button-icon button-icon--small" src="./img/icons/receipt.svg" alt="" />
+                  </span>
                 </a>
               </div>
             </div>

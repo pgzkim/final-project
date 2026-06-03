@@ -45,7 +45,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding: 29px 24px 30px;
+}
+
+.sidebar__close {
+  display: none;
 }
 
 .logo {
@@ -380,6 +385,17 @@ h1::before {
   display: none;
 }
 
+.slider-dots.swiper-pagination {
+  position: static;
+  transform: none;
+  width: auto;
+}
+
+.swiper-horizontal > .slider-dots.swiper-pagination-bullets .swiper-pagination-bullet,
+.slider-dots.swiper-pagination-horizontal .swiper-pagination-bullet {
+  margin: 0;
+}
+
 .show-all {
   margin: 18px 0 32px 38px;
   font-weight: 400;
@@ -545,11 +561,21 @@ h1::before {
     margin-right: auto;
   }
 
+  .mobile-header__contacts {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+  }
+
   .mobile-header__divider {
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: #eaeaea;
+  }
+
+  .sidebar__close {
+    display: inline-flex;
   }
 
   .header-actions {
@@ -607,6 +633,11 @@ h1::before {
   .mobile-header__logo img {
     width: 98px;
     height: 52px;
+  }
+
+  .mobile-header__contacts,
+  .mobile-header__divider--after-menu {
+    display: none;
   }
 
   .mobile-header .round-button {
@@ -696,24 +727,21 @@ h1::before {
   .tech-grid,
   .prices-table {
     display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    padding: 16px;
+    overflow: visible;
+    gap: 0;
+    padding: 0;
     margin: 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
   }
 
   .brand-slider,
   .tech-slider,
   .prices-slider {
     overflow: hidden;
+    padding-top: 16px;
   }
 
-  .brand-grid::-webkit-scrollbar,
-  .tech-grid::-webkit-scrollbar,
-  .prices-table::-webkit-scrollbar {
-    display: none;
+  .catalog-section__extra {
+    display: flex;
   }
 
   .brand-card,
@@ -721,7 +749,6 @@ h1::before {
   .prices-table__row {
     width: min(480px, calc(100vw - 48px));
     flex: 0 0 min(480px, calc(100vw - 48px));
-    scroll-snap-align: start;
   }
 
   .brand-card {
@@ -741,6 +768,7 @@ h1::before {
     display: flex;
     justify-content: center;
     gap: 12px;
+    min-height: 28px;
     padding: 0 0 16px;
   }
 

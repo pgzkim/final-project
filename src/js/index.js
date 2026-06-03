@@ -1,5 +1,7 @@
 import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 import '../scss/style.scss'
 
 const MOBILE_WIDTH = 768
@@ -18,17 +20,30 @@ const sliders = []
 
 if (window.innerWidth < MOBILE_WIDTH) {
   document.querySelectorAll('[data-slider]').forEach((slider) => {
-    sliders.push(
-      new Swiper(slider, {
-        modules: [Pagination],
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        pagination: {
-          el: slider.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-      })
-    )
+    const swiper = new Swiper(slider, {
+      modules: [Pagination],
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      slidesOffsetBefore: 16,
+      slidesOffsetAfter: 16,
+      observer: true,
+      observeParents: true,
+      watchOverflow: true,
+      watchSlidesProgress: true,
+      pagination: {
+        el: slider.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+    })
+
+    slider.querySelectorAll('img').forEach((image) => {
+      if (!image.complete) {
+        image.addEventListener('load', () => swiper.update(), { once: true })
+      }
+    })
+
+    sliders.push(swiper)
   })
 }
 

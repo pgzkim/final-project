@@ -45,6 +45,16 @@ module.exports = {
         ],
       },
 
+      // Include plain CSS imports from packages like Swiper
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+
       // Include fonts from css
       {
         test: /\.(eot|ttf|woff|woff2)$/,
