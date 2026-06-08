@@ -78,6 +78,10 @@ button {
   cursor: pointer;
 }
 
+.round-button:hover {
+  transform: scale(0.9);
+}
+
 .button-icon {
   display: block;
   width: 40px;
@@ -102,9 +106,11 @@ button {
   transition: color 0.2s ease;
 }
 
-.side-nav__link:hover,
-.side-nav__link--active {
+
+.side-nav__link:hover {
   color: $muted;
+  background-color: rgb(179, 181, 181);
+  border-left: 3px solid rgb(39, 217, 229);
 }
 
 .side-nav__link--active::before {
