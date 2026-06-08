@@ -778,6 +778,11 @@ h1::before {
     padding: 0 0 16px;
   }
 
+  .tech-slider .slider-dots,
+  .prices-section__dots {
+    padding-top: 12px;
+  }
+
   .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
@@ -806,9 +811,10 @@ h1::before {
     position: relative;
     display: grid;
     min-height: 200px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) 119px;
+    grid-template-rows: auto 1fr auto;
     gap: 12px 16px;
-    align-items: end;
+    align-items: start;
     padding: 16px;
     border: 0;
     border-radius: 6px;
@@ -830,16 +836,28 @@ h1::before {
 
   .prices-table__row > span:first-child {
     grid-column: 1 / -1;
+    grid-row: 1;
     align-self: start;
     font-size: 16px;
   }
 
-  .prices-table__row .order-button {
+  .prices-table__row > span:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
     align-self: end;
   }
 
-  .prices-section__dots {
-    padding-top: 0;
+  .prices-table__row > span:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+  }
+
+  .prices-table__row .order-button {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+    justify-self: end;
   }
 
   .commercial {
