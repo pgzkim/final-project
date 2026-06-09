@@ -9,6 +9,7 @@ const MOBILE_WIDTH = 768
 const shell = document.querySelector('.site-shell')
 const menuToggles = document.querySelectorAll('[data-menu-toggle]')
 const showAllButtons = document.querySelectorAll('[data-show-all]')
+const readMoreButtons = document.querySelectorAll('[data-read-more]')
 
 menuToggles.forEach((toggle) => {
   toggle.addEventListener('click', () => {
@@ -22,9 +23,9 @@ if (window.innerWidth < MOBILE_WIDTH) {
   document.querySelectorAll('[data-slider]').forEach((slider) => {
     const swiper = new Swiper(slider, {
       modules: [Pagination],
-      slidesPerView: 'auto',
-      slidesPerGroup: 1,
+      slidesPerView: 1,
       spaceBetween: 16,
+      slidesPerGroup: 1,
       slidesOffsetBefore: 16,
       slidesOffsetAfter: 16,
       observer: true,
@@ -55,5 +56,19 @@ showAllButtons.forEach((button) => {
     section.classList.toggle('catalog-section--expanded')
     text.textContent = section.classList.contains('catalog-section--expanded') ? 'Скрыть' : 'Показать все'
     sliders.forEach((slider) => slider.update())
+  })
+})
+
+readMoreButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    const copy = button.closest('.hero__copy')
+    const hiddenText = copy.querySelector('.invisible')
+    const buttonText = button.querySelector('[data-read-more-text]')
+
+    hiddenText.classList.toggle('invisible--visible')
+    button.classList.toggle('read-more--open')
+    buttonText.textContent = hiddenText.classList.contains('invisible--visible') ? 'Скрыть' : 'Читать далее'
   })
 })

@@ -435,6 +435,7 @@ h1::before {
 }
 
 .prices-slider .prices-table {
+  display: block;
   margin: 0;
 }
 
@@ -454,6 +455,7 @@ h1::before {
 }
 
 .prices-table__row {
+  width: 100%;
   min-height: 64px;
   padding: 0 24px;
   background: #fff;
@@ -600,6 +602,14 @@ h1::before {
     grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
   }
 
+  .hero__copy .invisible:not(.invisible--visible) {
+    display: none;
+  }
+
+  .read-more--open .chevron-icon {
+    transform: rotate(180deg);
+  }
+
   .brand-grid,
   .tech-grid {
     gap: 16px 24px;
@@ -706,10 +716,6 @@ h1::before {
 
   .hero__copy p {
     max-width: 480px;
-  }
-
-  .hero__copy p + p {
-    display: none;
   }
 
   .read-more {
