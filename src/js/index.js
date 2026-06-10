@@ -10,6 +10,8 @@ const shell = document.querySelector('.site-shell')
 const menuToggles = document.querySelectorAll('[data-menu-toggle]')
 const showAllButtons = document.querySelectorAll('[data-show-all]')
 const readMoreButtons = document.querySelectorAll('[data-read-more]')
+const sliderElements = document.querySelectorAll('[data-slider]')
+const mobileMedia = window.matchMedia(`(max-width: ${MOBILE_WIDTH - 1}px)`)
 
 menuToggles.forEach((toggle) => {
   toggle.addEventListener('click', () => {
@@ -17,10 +19,12 @@ menuToggles.forEach((toggle) => {
   })
 })
 
-const sliders = []
+let sliders = []
 
-if (window.innerWidth < MOBILE_WIDTH) {
-  document.querySelectorAll('[data-slider]').forEach((slider) => {
+const initSliders = () => {
+  if (sliders.length) return
+
+  sliders = Array.from(sliderElements, (slider) => {
     const swiper = new Swiper(slider, {
       modules: [Pagination],
       slidesPerView: 1,
@@ -44,9 +48,47 @@ if (window.innerWidth < MOBILE_WIDTH) {
       }
     })
 
-    sliders.push(swiper)
+    return swiper
   })
 }
+
+const destroySliders = () => {
+  sliders.forEach((swiper) => swiper.destroy(true, true))
+  sliders = []
+
+  sliderElements.forEach((slider) => {
+    slider.querySelector('.swiper-pagination').replaceChildren()
+  })
+}
+
+const syncSliders = () => {
+  if (mobileMedia.matches) {
+    initSliders()
+  } else {
+    destroySliders()
+  }
+}
+
+syncSliders()
+
+if (mobileMedia.addEventListener) {
+  mobileMedia.addEventListener('change', syncSliders)
+} else {
+  mobileMedia.addListener(syncSliders)
+}
+
+let resizeFrame
+
+window.addEventListener('resize', () => {
+  cancelAnimationFrame(resizeFrame)
+  resizeFrame = requestAnimationFrame(() => {
+    sliders.forEach((swiper) => {
+      swiper.update()
+      swiper.pagination.render()
+      swiper.pagination.update()
+    })
+  })
+})
 
 showAllButtons.forEach((button) => {
   button.addEventListener('click', () => {
